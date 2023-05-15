@@ -8,33 +8,34 @@
       
       
       
+      
+      
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.10">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.9">
     
     
       
-        <title>API specification - External Secrets Operator</title>
+        <title>Spec - External Secrets Operator</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.d6be258b.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+      
+
+    
+    
+    
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
-        
-      
-    
-    
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -44,23 +45,23 @@
   
 
 
-  <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-QP38TD8K7V"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-QP38TD8K7V",{page_path:e.pathname})})})</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP38TD8K7V"></script>
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QP38TD8K7V"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QP38TD8K7V",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QP38TD8K7V",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
+    
     
     
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr">
   
     
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -72,9 +73,9 @@
       
     </div>
     
-      <div data-md-component="outdated" hidden>
-        <aside class="md-banner md-banner--warning">
-          
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+          <aside class="md-banner md-banner--warning">
             <div class="md-banner__inner md-grid md-typeset">
               
   You're not viewing the latest version.
@@ -84,8 +85,8 @@
 
             </div>
             <script>var el=document.querySelector("[data-md-component=outdated]"),outdated=__md_get("__outdated",sessionStorage);!0===outdated&&el&&(el.hidden=!1)</script>
-          
-        </aside>
+          </aside>
+        
       </div>
     
     
@@ -96,11 +97,11 @@
     <a href=".." title="External Secrets Operator" class="md-header__button md-logo" aria-label="External Secrets Operator" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -112,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API specification
+              Spec
             
           </span>
         </div>
@@ -122,7 +123,7 @@
     
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
@@ -130,13 +131,13 @@
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
       
@@ -147,7 +148,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -156,10 +157,10 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/external-secrets/external-secrets/" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/external-secrets/external-secrets" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     External Secrets Operator
@@ -176,6 +177,118 @@
       
         
           
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api/components/" class="md-tabs__link">
+        API
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../guides/introduction/" class="md-tabs__link">
+        Guides
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../provider/aws-secrets-manager/" class="md-tabs__link">
+        Provider
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../examples/gitops-using-fluxcd/" class="md-tabs__link">
+        Examples
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../contributing/devguide/" class="md-tabs__link">
+        Community
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
         
       
       <main class="md-main" data-md-component="main">
@@ -188,23 +301,25 @@
                   <div class="md-sidebar__inner">
                     
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="External Secrets Operator" class="md-nav__button md-logo" aria-label="External Secrets Operator" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     External Secrets Operator
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/external-secrets/external-secrets/" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/external-secrets/external-secrets" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     External Secrets Operator
@@ -221,56 +336,67 @@
   
   
   
-    <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
     
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
-
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="..">Introduction</a>
+          
+            <label for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
   
   
   
     <li class="md-nav__item">
-      <a href="../api-overview/" class="md-nav__link">
+      <a href="../introduction/overview/" class="md-nav__link">
         Overview
       </a>
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          API Types
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="API Types" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          API Types
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+            
           
             
               
@@ -278,8 +404,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-externalsecret/" class="md-nav__link">
-        ExternalSecret
+      <a href="../introduction/getting-started/" class="md-nav__link">
+        Getting started
       </a>
     </li>
   
@@ -292,8 +418,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-secretstore/" class="md-nav__link">
-        SecretStore
+      <a href="../introduction/faq/" class="md-nav__link">
+        FAQ
       </a>
     </li>
   
@@ -306,8 +432,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-clustersecretstore/" class="md-nav__link">
-        ClusterSecretStore
+      <a href="../introduction/stability-support/" class="md-nav__link">
+        Stability and Support
       </a>
     </li>
   
@@ -320,8 +446,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../api-clusterexternalsecret/" class="md-nav__link">
-        ClusterExternalSecret
+      <a href="../introduction/deprecation-policy/" class="md-nav__link">
+        Deprecation Policy
       </a>
     </li>
   
@@ -345,20 +471,33 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
       
       
-        <label class="md-nav__link" for="__nav_4">
-          Guides
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          API
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Guides" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
-          Guides
+          API
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -368,22 +507,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-introduction/" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides-getting-started/" class="md-nav__link">
-        Getting started
+      <a href="../api/components/" class="md-nav__link">
+        Components
       </a>
     </li>
   
@@ -399,18 +524,527 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          Core Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Core Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/externalsecret/" class="md-nav__link">
+        ExternalSecret
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/secretstore/" class="md-nav__link">
+        SecretStore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/clustersecretstore/" class="md-nav__link">
+        ClusterSecretStore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/clusterexternalsecret/" class="md-nav__link">
+        ClusterExternalSecret
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/pushsecret/" class="md-nav__link">
+        PushSecret
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_4_3">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../api/generator/">Generators</a>
+          
+            <label for="__nav_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Generators
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/generator/acr/" class="md-nav__link">
+        Azure Container Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/generator/ecr/" class="md-nav__link">
+        AWS Elastic Container Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/generator/gcr/" class="md-nav__link">
+        Google Container Registry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/generator/vault/" class="md-nav__link">
+        Vault Dynamic Secret
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/generator/password/" class="md-nav__link">
+        Password
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/generator/fake/" class="md-nav__link">
+        Fake
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+          Reference Docs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Reference Docs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/spec/" class="md-nav__link">
+        API specification
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/controller-options/" class="md-nav__link">
+        Controller Options
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          External Secrets
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          External Secrets
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/all-keys-one-secret/" class="md-nav__link">
+        Extract structured data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/getallsecrets/" class="md-nav__link">
+        Find Secrets by Name or Metadata
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/datafrom-rewrite/" class="md-nav__link">
+        Rewriting Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_4" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
           Advanced Templating
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Advanced Templating" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2_4">
           <span class="md-nav__icon md-icon"></span>
           Advanced Templating
         </label>
@@ -422,7 +1056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-templating/" class="md-nav__link">
+      <a href="../guides/templating/" class="md-nav__link">
         v2
       </a>
     </li>
@@ -436,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-templating-v1/" class="md-nav__link">
+      <a href="../guides/templating-v1/" class="md-nav__link">
         v1
       </a>
     </li>
@@ -457,8 +1091,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-all-keys-one-secret/" class="md-nav__link">
-        All keys, One secret
+      <a href="../guides/common-k8s-secret-types/" class="md-nav__link">
+        Kubernetes Secret Types
       </a>
     </li>
   
@@ -471,35 +1105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-common-k8s-secret-types/" class="md-nav__link">
-        Common K8S Secret Types
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides-controller-class/" class="md-nav__link">
-        Controller Classes
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides-ownership-deletion-policy/" class="md-nav__link">
+      <a href="../guides/ownership-deletion-policy/" class="md-nav__link">
         Lifecycle: ownership & deletion
       </a>
     </li>
@@ -513,8 +1119,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-getallsecrets/" class="md-nav__link">
-        Getting Multiple Secrets
+      <a href="../guides/decoding-strategy/" class="md-nav__link">
+        Decoding Strategies
       </a>
     </li>
   
@@ -527,7 +1133,83 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-multi-tenancy/" class="md-nav__link">
+      <a href="../guides/controller-class/" class="md-nav__link">
+        Controller Classes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/generator/" class="md-nav__link">
+        Generators
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          Operations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/multi-tenancy/" class="md-nav__link">
         Multi Tenancy
       </a>
     </li>
@@ -541,8 +1223,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-metrics/" class="md-nav__link">
-        Metrics
+      <a href="../guides/security-best-practices/" class="md-nav__link">
+        Security Best Practices
       </a>
     </li>
   
@@ -555,7 +1237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-v1beta1/" class="md-nav__link">
+      <a href="../guides/v1beta1/" class="md-nav__link">
         Upgrading to v1beta1
       </a>
     </li>
@@ -569,7 +1251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../guides-using-latest-image/" class="md-nav__link">
+      <a href="../guides/using-latest-image/" class="md-nav__link">
         Using Latest Image
       </a>
     </li>
@@ -577,6 +1259,27 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guides/disable-cluster-features/" class="md-nav__link">
+        Disable Cluster Features
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -594,18 +1297,63 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
-        <label class="md-nav__link" for="__nav_5">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
           Provider
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Provider" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Provider
         </label>
@@ -616,35 +1364,9 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_1">
-          AWS
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="AWS" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_1">
-          <span class="md-nav__icon md-icon"></span>
-          AWS
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../provider-aws-secrets-manager/" class="md-nav__link">
-        Secrets Manager
+      <a href="../provider/aws-secrets-manager/" class="md-nav__link">
+        AWS Secrets Manager
       </a>
     </li>
   
@@ -657,157 +1379,9 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider-aws-parameter-store/" class="md-nav__link">
-        Parameter Store
+      <a href="../provider/aws-parameter-store/" class="md-nav__link">
+        AWS Parameter Store
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_2">
-          Azure
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Azure" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_2">
-          <span class="md-nav__icon md-icon"></span>
-          Azure
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../provider-azure-key-vault/" class="md-nav__link">
-        Key Vault
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_3">
-          Google
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Google" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_3">
-          <span class="md-nav__icon md-icon"></span>
-          Google
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../provider-google-secrets-manager/" class="md-nav__link">
-        Secret Manager
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_4">
-          IBM
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="IBM" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_4">
-          <span class="md-nav__icon md-icon"></span>
-          IBM
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../provider-ibm-secrets-manager/" class="md-nav__link">
-        Secrets Manager
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -819,7 +1393,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider-akeyless/" class="md-nav__link">
+      <a href="../provider/azure-key-vault/" class="md-nav__link">
+        Azure Key Vault
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/google-secrets-manager/" class="md-nav__link">
+        Google Cloud Secret Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/ibm-secrets-manager/" class="md-nav__link">
+        IBM Secrets Manager
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/akeyless/" class="md-nav__link">
         Akeyless
       </a>
     </li>
@@ -833,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider-hashicorp-vault/" class="md-nav__link">
+      <a href="../provider/hashicorp-vault/" class="md-nav__link">
         HashiCorp Vault
       </a>
     </li>
@@ -846,90 +1462,38 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_7">
-          Yandex
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Yandex" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_7">
-          <span class="md-nav__icon md-icon"></span>
-          Yandex
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../provider-yandex-lockbox/" class="md-nav__link">
-        Lockbox
+      <a href="../provider/yandex-certificate-manager/" class="md-nav__link">
+        Yandex Certificate Manager
       </a>
     </li>
   
 
             
           
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_8">
-          Gitlab
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Gitlab" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_8">
-          <span class="md-nav__icon md-icon"></span>
-          Gitlab
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
             
               
   
   
   
     <li class="md-nav__item">
-      <a href="../provider-gitlab-project-variables/" class="md-nav__link">
-        Gitlab Project Variables
+      <a href="../provider/yandex-lockbox/" class="md-nav__link">
+        Yandex Lockbox
       </a>
     </li>
   
 
             
           
-        </ul>
-      </nav>
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/alibaba/" class="md-nav__link">
+        Alibaba Cloud
+      </a>
     </li>
   
 
@@ -940,26 +1504,14 @@
   
   
   
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5_9">
-          Oracle
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Oracle" data-md-level="2">
-        <label class="md-nav__title" for="__nav_5_9">
-          <span class="md-nav__icon md-icon"></span>
-          Oracle
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+    <li class="md-nav__item">
+      <a href="../provider/gitlab-variables/" class="md-nav__link">
+        Gitlab Variables
+      </a>
+    </li>
+  
+
+            
           
             
               
@@ -967,7 +1519,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider-oracle-vault/" class="md-nav__link">
+      <a href="../provider/oracle-vault/" class="md-nav__link">
         Oracle Vault
       </a>
     </li>
@@ -975,8 +1527,15 @@
 
             
           
-        </ul>
-      </nav>
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/1password-automation/" class="md-nav__link">
+        1Password Secrets Automation
+      </a>
     </li>
   
 
@@ -988,7 +1547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider-webhook/" class="md-nav__link">
+      <a href="../provider/webhook/" class="md-nav__link">
         Webhook
       </a>
     </li>
@@ -1002,7 +1561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider-fake/" class="md-nav__link">
+      <a href="../provider/fake/" class="md-nav__link">
         Fake
       </a>
     </li>
@@ -1016,8 +1575,64 @@
   
   
     <li class="md-nav__item">
-      <a href="../provider-kubernetes/" class="md-nav__link">
+      <a href="../provider/kubernetes/" class="md-nav__link">
         Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/senhasegura-dsm/" class="md-nav__link">
+        senhasegura DevOps Secrets Management (DSM)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/doppler/" class="md-nav__link">
+        Doppler
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/keeper-security/" class="md-nav__link">
+        Keeper Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../provider/scaleway/" class="md-nav__link">
+        Scaleway
       </a>
     </li>
   
@@ -1041,18 +1656,31 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
       
       
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
       
       
-        <label class="md-nav__link" for="__nav_6">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
           Examples
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="Examples" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Examples
         </label>
@@ -1064,7 +1692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples-gitops-using-fluxcd/" class="md-nav__link">
+      <a href="../examples/gitops-using-fluxcd/" class="md-nav__link">
         FluxCD
       </a>
     </li>
@@ -1078,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples-anchore-engine-credentials/" class="md-nav__link">
+      <a href="../examples/anchore-engine-credentials/" class="md-nav__link">
         Anchore Engine
       </a>
     </li>
@@ -1092,8 +1720,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../examples-jenkins-kubernetes-credentials/" class="md-nav__link">
+      <a href="../examples/jenkins-kubernetes-credentials/" class="md-nav__link">
         Jenkins
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/bitwarden/" class="md-nav__link">
+        BitWarden
       </a>
     </li>
   
@@ -1117,18 +1759,182 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Community
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Community
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-        <label class="md-nav__link" for="__nav_7">
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+          Contributing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Contributing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/devguide/" class="md-nav__link">
+        Developer guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/process/" class="md-nav__link">
+        Contributing Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/release/" class="md-nav__link">
+        Release Process
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/coc/" class="md-nav__link">
+        Code of Conduct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributing/roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
           External Resources
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="External Resources" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
           <span class="md-nav__icon md-icon"></span>
           External Resources
         </label>
@@ -1181,181 +1987,10 @@
     </li>
   
 
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_8">
-          References
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="References" data-md-level="1">
-        <label class="md-nav__title" for="__nav_8">
-          <span class="md-nav__icon md-icon"></span>
-          References
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        API specification
-      </a>
-      
-    </li>
-  
-
             
           
         </ul>
       </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_9">
-          Contributing
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Contributing" data-md-level="1">
-        <label class="md-nav__title" for="__nav_9">
-          <span class="md-nav__icon md-icon"></span>
-          Contributing
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../contributing-devguide/" class="md-nav__link">
-        Developer guide
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../contributing-process/" class="md-nav__link">
-        Contributing Process
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../contributing-release/" class="md-nav__link">
-        Release Process
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../contributing-coc/" class="md-nav__link">
-        Code of Conduct
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../stability-support/" class="md-nav__link">
-        Stability and Support
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deprecation-policy/" class="md-nav__link">
-        Deprecation Policy
-      </a>
     </li>
   
 
@@ -1367,17 +2002,34 @@
               </div>
             
             
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
               
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-<a href="https://github.com/external-secrets/external-secrets/edit/master/docs/spec.md" title="Edit this page" class="md-content__button md-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
-</a>
+                  
+
+  
+  
 
 
-  <h1>API specification</h1>
+  <h1>Spec</h1>
 
 <p>Packages:</p>
 <ul>
@@ -1476,6 +2128,19 @@ github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
 </td>
 <td>
 <p>The SecretAccessKey is used for authentication</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>sessionTokenSecretRef</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
+</em>
+</td>
+<td>
+<p>The SessionToken used for authentication
+This must be defined if AccessKeyID and SecretAccessKey are temporary credentials
+see: <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html">https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html</a></p>
 </td>
 </tr>
 </tbody>
@@ -1632,6 +2297,24 @@ AkeylessAuthSecretRef
 </em>
 </td>
 <td>
+<em>(Optional)</em>
+<p>Reference to a Secret that contains the details
+to authenticate with Akeyless.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>kubernetesAuth</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.AkeylessKubernetesAuth">
+AkeylessKubernetesAuth
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Kubernetes authenticates with Akeyless by passing the ServiceAccount
+token stored in the named Secret resource.</p>
 </td>
 </tr>
 </tbody>
@@ -1683,6 +2366,77 @@ github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
 </em>
 </td>
 <td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.AkeylessKubernetesAuth">AkeylessKubernetesAuth
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.AkeylessAuth">AkeylessAuth</a>)
+</p>
+<p>
+<p>Authenticate with Kubernetes ServiceAccount token stored.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>accessID</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>the Akeyless Kubernetes auth-method access-id</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>k8sConfName</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Kubernetes-auth configuration name in Akeyless-Gateway</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>serviceAccountRef</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.ServiceAccountSelector
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Optional service account field containing the name of a kubernetes ServiceAccount.
+If the service account is specified, the service account secret token JWT will be used
+for authenticating with Akeyless. If the service account selector is not supplied,
+the secretRef will be used instead.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>secretRef</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Optional secret field containing a Kubernetes ServiceAccount JWT used
+for authenticating with Akeyless. If a name is specified without a key,
+<code>token</code> is the default. If one is not specified, the one bound to
+the controller will be used.</p>
 </td>
 </tr>
 </tbody>
@@ -1875,7 +2629,7 @@ is ServicePrincipal.</p>
 </tr>
 </thead>
 <tbody><tr><td><p>&#34;ManagedIdentity&#34;</p></td>
-<td><p>Using Managed Identity to authenticate. Used with aad-pod-identity installed in the clister.</p>
+<td><p>Using Managed Identity to authenticate. Used with aad-pod-identity installed in the cluster.</p>
 </td>
 </tr><tr><td><p>&#34;ServicePrincipal&#34;</p></td>
 <td><p>Using service principal to authenticate, which needs a tenantId, a clientId and a clientSecret.</p>
@@ -1883,6 +2637,35 @@ is ServicePrincipal.</p>
 </tr><tr><td><p>&#34;WorkloadIdentity&#34;</p></td>
 <td><p>Using Workload Identity service accounts to authenticate.</p>
 </td>
+</tr></tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.AzureEnvironmentType">AzureEnvironmentType
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.AzureKVProvider">AzureKVProvider</a>)
+</p>
+<p>
+<p>AzureEnvironmentType specifies the Azure cloud environment endpoints to use for
+connecting and authenticating with Azure. By default it points to the public cloud AAD endpoint.
+The following endpoints are available, also see here: <a href="https://github.com/Azure/go-autorest/blob/main/autorest/azure/environments.go#L152">https://github.com/Azure/go-autorest/blob/main/autorest/azure/environments.go#L152</a>
+PublicCloud, USGovernmentCloud, ChinaCloud, GermanCloud</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr><td><p>&#34;ChinaCloud&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;GermanCloud&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;PublicCloud&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;USGovernmentCloud&#34;</p></td>
+<td></td>
 </tr></tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.AzureKVAuth">AzureKVAuth
@@ -1987,6 +2770,22 @@ string
 </tr>
 <tr>
 <td>
+<code>environmentType</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.AzureEnvironmentType">
+AzureEnvironmentType
+</a>
+</em>
+</td>
+<td>
+<p>EnvironmentType specifies the Azure cloud environment endpoints to use for
+connecting and authenticating with Azure. By default it points to the public cloud AAD endpoint.
+The following endpoints are available, also see here: <a href="https://github.com/Azure/go-autorest/blob/main/autorest/azure/environments.go#L152">https://github.com/Azure/go-autorest/blob/main/autorest/azure/environments.go#L152</a>
+PublicCloud, USGovernmentCloud, ChinaCloud, GermanCloud</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>authSecretRef</code></br>
 <em>
 <a href="#external-secrets.io/v1beta1.AzureKVAuth">
@@ -2034,7 +2833,9 @@ string
 <a href="#external-secrets.io/v1beta1.VaultProvider">VaultProvider</a>)
 </p>
 <p>
-<p>Defines a location to fetch the cert for the vault provider from.</p>
+<p>Used to provide custom certificate authority (CA) certificates
+for a secret store. The CAProvider points to a Secret or ConfigMap resource
+that contains a PEM-encoded certificate.</p>
 </p>
 <table>
 <thead>
@@ -2076,7 +2877,7 @@ string
 </em>
 </td>
 <td>
-<p>The key the value inside of the provider type to use, only used with &ldquo;Secret&rdquo; type</p>
+<p>The key where the CA certificate can be found in the Secret or ConfigMap.</p>
 </td>
 </tr>
 <tr>
@@ -2088,7 +2889,8 @@ string
 </td>
 <td>
 <em>(Optional)</em>
-<p>The namespace the Provider type is in.</p>
+<p>The namespace the Provider type is in.
+Can only be defined when used in a ClusterSecretStore.</p>
 </td>
 </tr>
 </tbody>
@@ -2598,6 +3400,20 @@ int
 <p>Used to configure store refresh interval in seconds. Empty or 0 will default to the controller config.</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>conditions</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.ClusterSecretStoreCondition">
+[]ClusterSecretStoreCondition
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to constraint a ClusterSecretStore to specific namespaces. Relevant only to ClusterSecretStore</p>
+</td>
+</tr>
 </table>
 </td>
 </tr>
@@ -2611,6 +3427,193 @@ SecretStoreStatus
 </em>
 </td>
 <td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.ClusterSecretStoreCondition">ClusterSecretStoreCondition
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SecretStoreSpec">SecretStoreSpec</a>)
+</p>
+<p>
+<p>ClusterSecretStoreCondition describes a condition by which to choose namespaces to process ExternalSecrets in
+for a ClusterSecretStore instance.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>namespaceSelector</code></br>
+<em>
+<a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#labelselector-v1-meta">
+Kubernetes meta/v1.LabelSelector
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Choose namespace using a labelSelector</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>namespaces</code></br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<p>Choose namespaces by name</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.DopplerAuth">DopplerAuth
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.DopplerProvider">DopplerProvider</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>secretRef</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.DopplerAuthSecretRef">
+DopplerAuthSecretRef
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.DopplerAuthSecretRef">DopplerAuthSecretRef
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.DopplerAuth">DopplerAuth</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>dopplerToken</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
+</em>
+</td>
+<td>
+<p>The DopplerToken is used for authentication.
+See <a href="https://docs.doppler.com/reference/api#authentication">https://docs.doppler.com/reference/api#authentication</a> for auth token types.
+The Key attribute defaults to dopplerToken if not specified.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.DopplerProvider">DopplerProvider
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SecretStoreProvider">SecretStoreProvider</a>)
+</p>
+<p>
+<p>DopplerProvider configures a store to sync secrets using the Doppler provider.
+Project and Config are required if not using a Service Token.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>auth</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.DopplerAuth">
+DopplerAuth
+</a>
+</em>
+</td>
+<td>
+<p>Auth configures how the Operator authenticates with the Doppler API</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>project</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Doppler project (required if not using a Service Token)</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>config</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Doppler config (required if not using a Service Token)</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>nameTransformer</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Environment variable compatible name transforms that change secret names to a different format</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>format</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Format enables the downloading of secrets as a file (string)</p>
 </td>
 </tr>
 </tbody>
@@ -2665,6 +3668,7 @@ SecretStoreRef
 </em>
 </td>
 <td>
+<em>(Optional)</em>
 </td>
 </tr>
 <tr>
@@ -2840,6 +3844,8 @@ string
 </em>
 </td>
 <td>
+<p>SecretKey defines the key in which the controller stores
+the value. This is the key in the Kind=Secret</p>
 </td>
 </tr>
 <tr>
@@ -2852,6 +3858,22 @@ ExternalSecretDataRemoteRef
 </em>
 </td>
 <td>
+<p>RemoteRef points to the remote secret and defines
+which secret (version/property/..) to fetch.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>sourceRef</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.SourceRef">
+SourceRef
+</a>
+</em>
+</td>
+<td>
+<p>SourceRef allows you to override the source
+from which the value will pulled from.</p>
 </td>
 </tr>
 </tbody>
@@ -2883,7 +3905,8 @@ ExternalSecretDataRemoteRef
 </td>
 <td>
 <em>(Optional)</em>
-<p>Used to extract multiple key/value pairs from one secret</p>
+<p>Used to extract multiple key/value pairs from one secret
+Note: Extract does not support sourceRef.Generator or sourceRef.GeneratorRef.</p>
 </td>
 </tr>
 <tr>
@@ -2897,7 +3920,41 @@ ExternalSecretFind
 </td>
 <td>
 <em>(Optional)</em>
-<p>Used to find secrets based on tags or regular expressions</p>
+<p>Used to find secrets based on tags or regular expressions
+Note: Find does not support sourceRef.Generator or sourceRef.GeneratorRef.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>rewrite</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretRewrite">
+[]ExternalSecretRewrite
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to rewrite secret Keys after getting them from the secret Provider
+Multiple Rewrite operations can be provided. They are applied in a layered order (first to last)</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>sourceRef</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.SourceRef">
+SourceRef
+</a>
+</em>
+</td>
+<td>
+<p>SourceRef points to a store or generator
+which contains secret values ready to use.
+Use this in combination with Extract or Find pull values out of
+a specific SecretStore.
+When sourceRef points to a generator Extract or Find is not supported.
+The generator returns a static map of values</p>
 </td>
 </tr>
 </tbody>
@@ -2933,14 +3990,16 @@ string
 </tr>
 <tr>
 <td>
-<code>version</code></br>
+<code>metadataPolicy</code></br>
 <em>
-string
+<a href="#external-secrets.io/v1beta1.ExternalSecretMetadataPolicy">
+ExternalSecretMetadataPolicy
+</a>
 </em>
 </td>
 <td>
 <em>(Optional)</em>
-<p>Used to select a specific version of the Provider value, if supported</p>
+<p>Policy for fetching tags/labels from provider secrets, possible options are Fetch, None. Defaults to None</p>
 </td>
 </tr>
 <tr>
@@ -2957,6 +4016,18 @@ string
 </tr>
 <tr>
 <td>
+<code>version</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to select a specific version of the Provider value, if supported</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>conversionStrategy</code></br>
 <em>
 <a href="#external-secrets.io/v1beta1.ExternalSecretConversionStrategy">
@@ -2969,7 +4040,47 @@ ExternalSecretConversionStrategy
 <p>Used to define a conversion Strategy</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>decodingStrategy</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretDecodingStrategy">
+ExternalSecretDecodingStrategy
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to define a decoding Strategy</p>
+</td>
+</tr>
 </tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.ExternalSecretDecodingStrategy">ExternalSecretDecodingStrategy
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretDataRemoteRef">ExternalSecretDataRemoteRef</a>, 
+<a href="#external-secrets.io/v1beta1.ExternalSecretFind">ExternalSecretFind</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr><td><p>&#34;Auto&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;Base64&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;Base64URL&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;None&#34;</p></td>
+<td></td>
+</tr></tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.ExternalSecretDeletionPolicy">ExternalSecretDeletionPolicy
 (<code>string</code> alias)</p></h3>
@@ -3074,6 +4185,114 @@ ExternalSecretConversionStrategy
 <p>Used to define a conversion Strategy</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>decodingStrategy</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretDecodingStrategy">
+ExternalSecretDecodingStrategy
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to define a decoding Strategy</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.ExternalSecretMetadataPolicy">ExternalSecretMetadataPolicy
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretDataRemoteRef">ExternalSecretDataRemoteRef</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr><td><p>&#34;Fetch&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;None&#34;</p></td>
+<td></td>
+</tr></tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.ExternalSecretRewrite">ExternalSecretRewrite
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretDataFromRemoteRef">ExternalSecretDataFromRemoteRef</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>regexp</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretRewriteRegexp">
+ExternalSecretRewriteRegexp
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to rewrite with regular expressions.
+The resulting key will be the output of a regexp.ReplaceAll operation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.ExternalSecretRewriteRegexp">ExternalSecretRewriteRegexp
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretRewrite">ExternalSecretRewrite</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>source</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Used to define the regular expression of a re.Compiler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>target</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Used to define the target pattern of a ReplaceAll operation.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.ExternalSecretSpec">ExternalSecretSpec
@@ -3104,6 +4323,7 @@ SecretStoreRef
 </em>
 </td>
 <td>
+<em>(Optional)</em>
 </td>
 </tr>
 <tr>
@@ -3810,6 +5030,58 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="external-secrets.io/v1beta1.GeneratorRef">GeneratorRef
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SourceRef">SourceRef</a>)
+</p>
+<p>
+<p>GeneratorRef points to a generator custom resource.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>apiVersion</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Specify the apiVersion of the generator resource</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>kind</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Specify the Kind of the resource, e.g. Password, ACRAccessToken etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>name</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Specify the name of the generator resource</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="external-secrets.io/v1beta1.GenericStore">GenericStore
 </h3>
 <p>
@@ -3902,6 +5174,39 @@ string
 <p>ProjectID specifies a project where secrets are located.</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>inheritFromGroups</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>InheritFromGroups specifies whether parent groups should be discovered and checked for secrets.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>groupIDs</code></br>
+<em>
+[]string
+</em>
+</td>
+<td>
+<p>GroupIDs specify, which gitlab groups to pull secrets from. Group secrets are read from left to right followed by the project variables.</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>environment</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Environment environment_scope of gitlab CI/CD variables (Please see <a href="https://docs.gitlab.com/ee/ci/environments/#create-a-static-environment">https://docs.gitlab.com/ee/ci/environments/#create-a-static-environment</a> on how to create environments)</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.GitlabSecretRef">GitlabSecretRef
@@ -3961,6 +5266,69 @@ IBMAuthSecretRef
 <td>
 </td>
 </tr>
+<tr>
+<td>
+<code>containerAuth</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.IBMAuthContainerAuth">
+IBMAuthContainerAuth
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.IBMAuthContainerAuth">IBMAuthContainerAuth
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.IBMAuth">IBMAuth</a>)
+</p>
+<p>
+<p>IBM Container-based auth with IAM Trusted Profile.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>profile</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>the IBM Trusted Profile</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>tokenLocation</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>Location the token is mounted on the pod</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>iamEndpoint</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.IBMAuthSecretRef">IBMAuthSecretRef
@@ -3987,7 +5355,6 @@ github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
 </em>
 </td>
 <td>
-<em>(Optional)</em>
 <p>The SecretAccessKey is used for authentication</p>
 </td>
 </tr>
@@ -4085,9 +5452,7 @@ TokenAuth
 <td>
 <code>serviceAccount</code></br>
 <em>
-<a href="#external-secrets.io/v1beta1.ServiceAccountAuth">
-ServiceAccountAuth
-</a>
+github.com/external-secrets/external-secrets/apis/meta/v1.ServiceAccountSelector
 </em>
 </td>
 <td>
@@ -4216,6 +5581,121 @@ CAProvider
 <p>NoSecretError shall be returned when a GetSecret can not find the
 desired secret. This is used for deletionPolicy.</p>
 </p>
+<h3 id="external-secrets.io/v1beta1.OnePasswordAuth">OnePasswordAuth
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.OnePasswordProvider">OnePasswordProvider</a>)
+</p>
+<p>
+<p>OnePasswordAuth contains a secretRef for credentials.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>secretRef</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.OnePasswordAuthSecretRef">
+OnePasswordAuthSecretRef
+</a>
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.OnePasswordAuthSecretRef">OnePasswordAuthSecretRef
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.OnePasswordAuth">OnePasswordAuth</a>)
+</p>
+<p>
+<p>OnePasswordAuthSecretRef holds secret references for 1Password credentials.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>connectTokenSecretRef</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
+</em>
+</td>
+<td>
+<p>The ConnectToken is used for authentication to a 1Password Connect Server.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.OnePasswordProvider">OnePasswordProvider
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SecretStoreProvider">SecretStoreProvider</a>)
+</p>
+<p>
+<p>OnePasswordProvider configures a store to sync secrets using the 1Password Secret Manager provider.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>auth</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.OnePasswordAuth">
+OnePasswordAuth
+</a>
+</em>
+</td>
+<td>
+<p>Auth defines the information necessary to authenticate against OnePassword Connect Server</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>connectHost</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>ConnectHost defines the OnePassword Connect Server to connect to</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>vaults</code></br>
+<em>
+map[string]int
+</em>
+</td>
+<td>
+<p>Vaults defines which OnePassword vaults to search in which order</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="external-secrets.io/v1beta1.OracleAuth">OracleAuth
 </h3>
 <p>
@@ -4463,6 +5943,20 @@ int
 <p>Used to configure store refresh interval in seconds. Empty or 0 will default to the controller config.</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>conditions</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.ClusterSecretStoreCondition">
+[]ClusterSecretStoreCondition
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to constraint a ClusterSecretStore to specific namespaces. Relevant only to ClusterSecretStore</p>
+</td>
+</tr>
 </table>
 </td>
 </tr>
@@ -4506,7 +6000,7 @@ SecretStoreStatus
 <a href="#external-secrets.io/v1beta1.SecretStoreSpec">SecretStoreSpec</a>)
 </p>
 <p>
-<p>SecretStoreProvider contains the provider-specific configration.</p>
+<p>SecretStoreProvider contains the provider-specific configuration.</p>
 </p>
 <table>
 <thead>
@@ -4616,6 +6110,20 @@ IBMProvider
 </tr>
 <tr>
 <td>
+<code>yandexcertificatemanager</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.YandexCertificateManagerProvider">
+YandexCertificateManagerProvider
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>YandexCertificateManager configures this store to sync secrets using Yandex Certificate Manager provider</p>
+</td>
+</tr>
+<tr>
+<td>
 <code>yandexlockbox</code></br>
 <em>
 <a href="#external-secrets.io/v1beta1.YandexLockboxProvider">
@@ -4639,7 +6147,7 @@ GitlabProvider
 </td>
 <td>
 <em>(Optional)</em>
-<p>GItlab configures this store to sync secrets using Gitlab Variables provider</p>
+<p>Gitlab configures this store to sync secrets using Gitlab Variables provider</p>
 </td>
 </tr>
 <tr>
@@ -4654,6 +6162,20 @@ AlibabaProvider
 <td>
 <em>(Optional)</em>
 <p>Alibaba configures this store to sync secrets using Alibaba Cloud provider</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>onepassword</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.OnePasswordProvider">
+OnePasswordProvider
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>OnePassword configures this store to sync secrets using the 1Password Cloud provider</p>
 </td>
 </tr>
 <tr>
@@ -4698,13 +6220,42 @@ FakeProvider
 <p>Fake configures a store with static key/value pairs</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>senhasegura</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.SenhaseguraProvider">
+SenhaseguraProvider
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Senhasegura configures this store to sync secrets using senhasegura provider</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>doppler</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.DopplerProvider">
+DopplerProvider
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Doppler configures this store to sync secrets using the Doppler provider</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.SecretStoreRef">SecretStoreRef
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#external-secrets.io/v1beta1.ExternalSecretSpec">ExternalSecretSpec</a>)
+<a href="#external-secrets.io/v1beta1.ExternalSecretSpec">ExternalSecretSpec</a>, 
+<a href="#external-secrets.io/v1beta1.SourceRef">SourceRef</a>)
 </p>
 <p>
 <p>SecretStoreRef defines which SecretStore to fetch the ExternalSecret data.</p>
@@ -4851,6 +6402,20 @@ int
 <p>Used to configure store refresh interval in seconds. Empty or 0 will default to the controller config.</p>
 </td>
 </tr>
+<tr>
+<td>
+<code>conditions</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.ClusterSecretStoreCondition">
+[]ClusterSecretStoreCondition
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Used to constraint a ClusterSecretStore to specific namespaces. Relevant only to ClusterSecretStore</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.SecretStoreStatus">SecretStoreStatus
@@ -4968,13 +6533,14 @@ Kubernetes meta/v1.Time
 <p>
 <p>SecretsClient provides access to secrets.</p>
 </p>
-<h3 id="external-secrets.io/v1beta1.ServiceAccountAuth">ServiceAccountAuth
+<h3 id="external-secrets.io/v1beta1.SenhaseguraAuth">SenhaseguraAuth
 </h3>
 <p>
 (<em>Appears on:</em>
-<a href="#external-secrets.io/v1beta1.KubernetesAuth">KubernetesAuth</a>)
+<a href="#external-secrets.io/v1beta1.SenhaseguraProvider">SenhaseguraProvider</a>)
 </p>
 <p>
+<p>SenhaseguraAuth tells the controller how to do auth in senhasegura.</p>
 </p>
 <table>
 <thead>
@@ -4986,12 +6552,161 @@ Kubernetes meta/v1.Time
 <tbody>
 <tr>
 <td>
-<code>serviceAccount</code></br>
+<code>clientId</code></br>
 <em>
-github.com/external-secrets/external-secrets/apis/meta/v1.ServiceAccountSelector
+string
 </em>
 </td>
 <td>
+</td>
+</tr>
+<tr>
+<td>
+<code>clientSecretSecretRef</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.SenhaseguraModuleType">SenhaseguraModuleType
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SenhaseguraProvider">SenhaseguraProvider</a>)
+</p>
+<p>
+<p>SenhaseguraModuleType enum defines senhasegura target module to fetch secrets</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr><td><p>&#34;DSM&#34;</p></td>
+<td><pre><code> SenhaseguraModuleDSM is the senhasegura DevOps Secrets Management module
+see: https://senhasegura.com/devops
+</code></pre>
+</td>
+</tr></tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.SenhaseguraProvider">SenhaseguraProvider
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SecretStoreProvider">SecretStoreProvider</a>)
+</p>
+<p>
+<p>SenhaseguraProvider setup a store to sync secrets with senhasegura.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>url</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<p>URL of senhasegura</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>module</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.SenhaseguraModuleType">
+SenhaseguraModuleType
+</a>
+</em>
+</td>
+<td>
+<p>Module defines which senhasegura module should be used to get secrets</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>auth</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.SenhaseguraAuth">
+SenhaseguraAuth
+</a>
+</em>
+</td>
+<td>
+<p>Auth defines parameters to authenticate in senhasegura</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>ignoreSslCertificate</code></br>
+<em>
+bool
+</em>
+</td>
+<td>
+<p>IgnoreSslCertificate defines if SSL certificate must be ignored</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.SourceRef">SourceRef
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.ExternalSecretData">ExternalSecretData</a>, 
+<a href="#external-secrets.io/v1beta1.ExternalSecretDataFromRemoteRef">ExternalSecretDataFromRemoteRef</a>)
+</p>
+<p>
+<p>SourceRef allows you to override the source
+from which the secret will be pulled from.
+You can define at maximum one property.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>storeRef</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.SecretStoreRef">
+SecretStoreRef
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>generatorRef</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.GeneratorRef">
+GeneratorRef
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>GeneratorRef points to a generator custom resource in</p>
 </td>
 </tr>
 </tbody>
@@ -5055,6 +6770,43 @@ TemplateRef
 </em>
 </td>
 <td>
+</td>
+</tr>
+<tr>
+<td>
+<code>scope</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.TemplateScope">
+TemplateScope
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>target</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.TemplateTarget">
+TemplateTarget
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+</td>
+</tr>
+<tr>
+<td>
+<code>literal</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
 </td>
 </tr>
 </tbody>
@@ -5127,6 +6879,52 @@ string
 </tr>
 </tbody>
 </table>
+<h3 id="external-secrets.io/v1beta1.TemplateScope">TemplateScope
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.TemplateFrom">TemplateFrom</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr><td><p>&#34;KeysAndValues&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;Values&#34;</p></td>
+<td></td>
+</tr></tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.TemplateTarget">TemplateTarget
+(<code>string</code> alias)</p></h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.TemplateFrom">TemplateFrom</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr><td><p>&#34;Annotations&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;Data&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;Labels&#34;</p></td>
+<td></td>
+</tr><tr><td><p>&#34;StringData&#34;</p></td>
+<td></td>
+</tr></tbody>
+</table>
 <h3 id="external-secrets.io/v1beta1.TokenAuth">TokenAuth
 </h3>
 <p>
@@ -5167,11 +6965,16 @@ github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
 </tr>
 </thead>
 <tbody><tr><td><p>2</p></td>
-<td></td>
+<td><p>Error indicates that there is a misconfiguration.</p>
+</td>
 </tr><tr><td><p>0</p></td>
-<td></td>
+<td><p>Ready indicates that the client is configured correctly
+and can be used.</p>
+</td>
 </tr><tr><td><p>1</p></td>
-<td></td>
+<td><p>Unknown indicates that the client can be used
+but information is missing and it can not be validated.</p>
+</td>
 </tr></tbody>
 </table>
 <h3 id="external-secrets.io/v1beta1.VaultAppRole">VaultAppRole
@@ -5594,7 +7397,8 @@ github.com/external-secrets/external-secrets/apis/meta/v1.ServiceAccountSelector
 <em>(Optional)</em>
 <p>Optional audiences field that will be used to request a temporary Kubernetes service
 account token for the service account referenced by <code>serviceAccountRef</code>.
-Defaults to a single audience <code>vault</code> it not specified.</p>
+Defaults to a single audience <code>vault</code> it not specified.
+Deprecated: use serviceAccountRef.Audiences instead</p>
 </td>
 </tr>
 <tr>
@@ -5609,6 +7413,7 @@ int64
 <p>Optional expiration time in seconds that will be used to request a temporary
 Kubernetes service account token for the service account referenced by
 <code>serviceAccountRef</code>.
+Deprecated: this will be removed in the future.
 Defaults to 10 minutes.</p>
 </td>
 </tr>
@@ -6110,6 +7915,122 @@ github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
 </tr>
 </tbody>
 </table>
+<h3 id="external-secrets.io/v1beta1.YandexCertificateManagerAuth">YandexCertificateManagerAuth
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.YandexCertificateManagerProvider">YandexCertificateManagerProvider</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>authorizedKeySecretRef</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>The authorized key used for authentication</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.YandexCertificateManagerCAProvider">YandexCertificateManagerCAProvider
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.YandexCertificateManagerProvider">YandexCertificateManagerProvider</a>)
+</p>
+<p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>certSecretRef</code></br>
+<em>
+github.com/external-secrets/external-secrets/apis/meta/v1.SecretKeySelector
+</em>
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-secrets.io/v1beta1.YandexCertificateManagerProvider">YandexCertificateManagerProvider
+</h3>
+<p>
+(<em>Appears on:</em>
+<a href="#external-secrets.io/v1beta1.SecretStoreProvider">SecretStoreProvider</a>)
+</p>
+<p>
+<p>YandexCertificateManagerProvider Configures a store to sync secrets using the Yandex Certificate Manager provider.</p>
+</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>apiEndpoint</code></br>
+<em>
+string
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>Yandex.Cloud API endpoint (e.g. &lsquo;api.cloud.yandex.net:443&rsquo;)</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>auth</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.YandexCertificateManagerAuth">
+YandexCertificateManagerAuth
+</a>
+</em>
+</td>
+<td>
+<p>Auth defines the information necessary to authenticate against Yandex Certificate Manager</p>
+</td>
+</tr>
+<tr>
+<td>
+<code>caProvider</code></br>
+<em>
+<a href="#external-secrets.io/v1beta1.YandexCertificateManagerCAProvider">
+YandexCertificateManagerCAProvider
+</a>
+</em>
+</td>
+<td>
+<em>(Optional)</em>
+<p>The provider for the CA bundle to use to validate Yandex.Cloud server certificate.</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3 id="external-secrets.io/v1beta1.YandexLockboxAuth">YandexLockboxAuth
 </h3>
 <p>
@@ -6231,53 +8152,34 @@ YandexLockboxCAProvider
 Generated with <code>gen-crd-api-reference-docs</code>.
 </em></p>
 
-              
-            </article>
-          </div>
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
   
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../eso-blogs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Blogs" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Blogs
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../contributing-devguide/" class="md-footer__link md-footer__link--next" aria-label="Next: Developer guide" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Developer guide
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 The external-secrets Authors.<br/>
+&copy; 2023 The Linux Foundation. All rights reserved.<br/><br/>
+The Linux Foundation has registered trademarks and uses trademarks.<br/>
+For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/">Trademark Usage page</a>.
+
+    </div>
   
   
     Made with
@@ -6295,10 +8197,11 @@ Generated with <code>gen-crd-api-reference-docs</code>.
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.092fa1f6.min.js", "version": {"provider": "mike"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.e3b2bf44.min.js"></script>
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
       
     
   </body>
