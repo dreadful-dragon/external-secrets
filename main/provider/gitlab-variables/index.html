@@ -19,7 +19,7 @@
     
     
       
-        <title>Gitlab Variables - External Secrets Operator</title>
+        <title>GitLab Variables - External Secrets Operator</title>
       
     
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Gitlab Variables
+              GitLab Variables
             
           </span>
         </div>
@@ -1524,12 +1524,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Gitlab Variables
+          GitLab Variables
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Gitlab Variables
+        GitLab Variables
       </a>
       
         
@@ -1547,15 +1547,15 @@
       
         <li class="md-nav__item">
   <a href="#gitlab-variables" class="md-nav__link">
-    Gitlab Variables
+    GitLab Variables
   </a>
   
-    <nav class="md-nav" aria-label="Gitlab Variables">
+    <nav class="md-nav" aria-label="GitLab Variables">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#configuring-gitlab" class="md-nav__link">
-    Configuring Gitlab
+    Configuring GitLab
   </a>
   
 </li>
@@ -2123,15 +2123,15 @@
       
         <li class="md-nav__item">
   <a href="#gitlab-variables" class="md-nav__link">
-    Gitlab Variables
+    GitLab Variables
   </a>
   
-    <nav class="md-nav" aria-label="Gitlab Variables">
+    <nav class="md-nav" aria-label="GitLab Variables">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#configuring-gitlab" class="md-nav__link">
-    Configuring Gitlab
+    Configuring GitLab
   </a>
   
 </li>
@@ -2200,12 +2200,12 @@
   
 
 
-  <h1>Gitlab Variables</h1>
+  <h1>GitLab Variables</h1>
 
-<h2 id="gitlab-variables">Gitlab Variables</h2>
-<p>External Secrets Operator integrates with Gitlab to sync <a href="https://docs.gitlab.com/ee/api/project_level_variables.html">Gitlab Project Variables API</a> and/or <a href="https://docs.gitlab.com/ee/api/group_level_variables.html">Gitlab Group Variables API</a> to secrets held on the Kubernetes cluster.</p>
-<h3 id="configuring-gitlab">Configuring Gitlab</h3>
-<p>The Gitlab API requires an access token, project ID and/or groupIDs.</p>
+<h2 id="gitlab-variables">GitLab Variables</h2>
+<p>External Secrets Operator integrates with GitLab to sync <a href="https://docs.gitlab.com/ee/api/project_level_variables.html">GitLab Project Variables API</a> and/or <a href="https://docs.gitlab.com/ee/api/group_level_variables.html">GitLab Group Variables API</a> to secrets held on the Kubernetes cluster.</p>
+<h3 id="configuring-gitlab">Configuring GitLab</h3>
+<p>The GitLab API requires an access token, project ID and/or groupIDs.</p>
 <p>To create a new access token, go to your user settings and select 'access tokens'. Give your token a name, expiration date, and select the permissions required (Note 'api' is required).</p>
 <p><img alt="token-details" src="../../pictures/screenshot_gitlab_token.png" /></p>
 <p>Click 'Create personal access token', and your token will be generated and displayed on screen. Copy or save this token since you can't access it again.
@@ -2249,7 +2249,7 @@
 <p>Your project ID can be found on your project's page.
 <img alt="projectID" src="../../pictures/screenshot_gitlab_projectID.png" /></p>
 <h3 id="creating-external-secret">Creating external secret</h3>
-<p>To sync a Gitlab variable to a secret on the Kubernetes cluster, a <code>Kind=ExternalSecret</code> is needed.</p>
+<p>To sync a GitLab variable to a secret on the Kubernetes cluster, a <code>Kind=ExternalSecret</code> is needed.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
 <span class="nt">metadata</span><span class="p">:</span>
